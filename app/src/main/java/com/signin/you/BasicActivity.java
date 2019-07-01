@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import cn.signin.you.ActivtyCollector;
+import cn.signin.you.ActivityCollector;
 
 public class BasicActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,12 +21,12 @@ public class BasicActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: "+getClass().getSimpleName());
-        ActivtyCollector.addActivity(this);
+        ActivityCollector.addActivity(this);
     }
 
     protected void onDestroy() {
         super.onDestroy();
-        ActivtyCollector.removeActivity(this);
+        ActivityCollector.removeActivity(this);
     }
     @Override
     public void onClick(View view) {
